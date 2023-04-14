@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content='@Document.GetString("SiteAuthor")@Document.GetString("SiteDescription")'>
+        @if(Document.ContainsKey(WebKeys.Author))
+        {
+            <meta name="author" content="@Document.GetString(WebKeys.Author)">
+        }
+        else {
+            <meta name="author" content='@Document.GetString("SiteAuthor")'>
+        }
+        <title>@Document.GetString("PageTitle")</title>
+        <meta name="application-name" content='@Document.GetString("SiteTitle")' />
+        <meta name="msapplication-tooltip" content='@Document.GetString("SiteTitle")' />
+        <meta name="msapplication-starturl" content='@Context.GetLink("/")' />
+                
+        <meta property="og:title" content='@Document.GetString("PageTitle")' />
+        <meta property="og:image" content='/images/meta.png' />
+        <meta property="og:image:alt" content='@Document.GetString("PageTitle")' />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content='@Document.GetLink(true)' />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+        <link href='@Context.GetLink("/styles/main.css")' rel="stylesheet"/>
+        <link rel="icon" href='@Context.GetLink("/favicon.ico")'>
+    </head>
+    <body>
+        @Html.Partial("_Header")
+        <section class="content">
+            <section class="page_content">
+                <div class="page_meta">
+                    <h1>@Document.GetString(WebKeys.Title)</h1>
+                    <hr />
+                </div>
+
+                @if (!Document.GetBool("OutsidePageContent")){
+                    @RenderBody()
+                }
+            </section>
+            @if (Document.GetBool("OutsidePageContent")){
+                @RenderBody()
+            }
+        </section>
+        @Html.Partial("_Footer")
+
+        <script src='@Context.GetLink("/scripts/dom-to-image.js")'></script>
+        <script src='@Context.GetLink("/scripts/main.js")'></script>
+    </body>
+</html>
