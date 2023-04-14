@@ -3,7 +3,7 @@
   .CreateWeb(args)
   .DeployToGitHubPages(
         "YuutaTsubasa",
-        "QuickSceduler",
+        "QuickScheduler",
         Config.FromSetting<string>("GITHUB_TOKEN")
     )
   .RunAsync();
