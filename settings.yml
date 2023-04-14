@@ -1,9 +1,0 @@
-MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.36"
-SiteTitle: 悠太翼官方網站
-PageTitle: 快速週表產生器
-SiteAuthor: 悠太翼
-SiteAuthorTitle: VTuber / VCoder / VSinger
-SiteDescription: 用來快速產生週表的小工具
-GitHubOwner: "YuutaTsubasa"
-GitHubName: "QuickSceduler"
-GitHubToken: => Config.FromSetting<string>("GITHUB_TOKEN")
