@@ -1,39 +1,6 @@
 Title: "快速週表產生器"
 OutsidePageContent: true
 ---
-@{
-    var items = new Dictionary<string, string>[] {
-        new Dictionary<string, string> {
-            {"Time", "（一）21:30"},
-            {"Title", "霍格華茲的傳承"},
-            {"Tags", "遊戲"}
-        },
-        new Dictionary<string, string> {
-            {"Time", "（二）21:30"},
-            {"Title", "利用 Polygon Runway 頻道同步練習 3D 建模"},
-            {"Tags", "3D"}
-        },
-        new Dictionary<string, string> {
-            {"Time", "（三）休息"}
-        },
-        new Dictionary<string, string> {
-            {"Time", "（四）21:30"},
-            {"Title", "音樂遊戲探索－Rotaeno"},
-            {"Tags", "遊戲"}
-        },
-        new Dictionary<string, string> {
-            {"Time", "（五）休息"}
-        },
-        new Dictionary<string, string> {
-            {"Time", "（六）14:10"},
-            {"Title", "Ren'Py 入門～一起來做電子小說～"},
-            {"Tags", "程式"}
-        },
-        new Dictionary<string, string>{
-            {"Time", "（日）休息"}
-        },
-    };
-}
 <section class="data_form">
     <div><label for="startDate">開始時間：</label><input type="date" id="startDate" /></div>
     <div><label for="backgroundColor">背景顏色：</label><input type="color" id="backgroundColor" /></div>
@@ -201,11 +168,11 @@ OutsidePageContent: true
             weeklyAuthorPart.style.display = "none";
         }
 
-        const startDate = document.querySelector("#startDate").value;
+        const startDate = new Date(document.querySelector("#startDate").value);
         let contents = [];
         for(let day = 1 ; day <= 7 ; ++day){
             let currentDate = new Date();
-            currentDate.setDate(startDate + (day - 1));
+            currentDate.setDate(startDate.getDate() + (day - 1));
             contents.push({
                 "date": currentDate,
                 "title": document.querySelector(`#day${day}Title`).value,
@@ -214,7 +181,6 @@ OutsidePageContent: true
                 "time": document.querySelector(`#day${day}Time`).value,
             })
         }
-        console.log(contents);
 
         const options = { weekday: 'short'};
         const dayItems = document.querySelectorAll(".weekly_item");
