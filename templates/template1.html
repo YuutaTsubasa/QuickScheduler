@@ -1,0 +1,240 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content='&#x60A0;&#x592A;&#x7FFC;&#x7528;&#x4F86;&#x5FEB;&#x901F;&#x7522;&#x751F;&#x9031;&#x8868;&#x7684;&#x5C0F;&#x5DE5;&#x5177;'>
+            <meta name="author" content="&#x60A0;&#x592A;&#x7FFC;">
+        <title>&#x5FEB;&#x901F;&#x9031;&#x8868;&#x7522;&#x751F;&#x5668;</title>
+        <meta name="application-name" content='&#x60A0;&#x592A;&#x7FFC;&#x5B98;&#x65B9;&#x7DB2;&#x7AD9;' />
+        <meta name="msapplication-tooltip" content='&#x60A0;&#x592A;&#x7FFC;&#x5B98;&#x65B9;&#x7DB2;&#x7AD9;' />
+        <meta name="msapplication-starturl" content='/' />
+                
+        <meta property="og:title" content='&#x5FEB;&#x901F;&#x9031;&#x8868;&#x7522;&#x751F;&#x5668;' />
+        <meta property="og:image" content='/images/meta.png' />
+        <meta property="og:image:alt" content='&#x5FEB;&#x901F;&#x9031;&#x8868;&#x7522;&#x751F;&#x5668;' />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content='/templates/template1' />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet"/>
+        <link href='/styles/main.css' rel="stylesheet"/>
+        <link rel="icon" href='/favicon.ico'/>
+            <link href='/styles/templates/templates1.css' rel='stylesheet'/>
+    </head>
+    <body>
+        <header class='small'>
+    <div class="top_mask"></div>
+</header>
+        <section class="content">
+            <section class="page_content">
+                <div class="page_meta">
+                    <h1>&#x521D;&#x59CB;&#x7248;&#x672C;</h1>
+                    <hr />
+                </div>
+
+            </section>
+<style>
+    .data_form {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        margin: 10px;
+        align-items: center;
+        background-color: rgb(38, 38, 38);
+        border-radius: 20px;
+    }
+
+    .input_field {
+        margin-bottom: 15px;
+        font-size: 15pt;
+        color: rgb(190, 190, 190);
+        width: 80%;
+    }
+
+    .input_field label {
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+    }
+
+    
+    .daySetting {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        margin-top: 10px;
+        width: 80%;
+        background-color: white;
+        border-radius: 20px;
+    }
+
+    .daySetting .input_field {
+        width: 95%;
+        color: rgb(38, 38, 38);
+    }
+
+    .input_field select, .input_field input {
+        height: 40px;
+        font-size: 13pt;
+        border: 0px;
+        background-color: rgb(228, 228, 228);
+        padding: 5px 15px;
+        width: 100%;
+        margin-top: 5px;
+    }
+</style>
+
+<section class="data_form">
+    <div class="input_field"><label for="startDate">開始時間</label><input type="date" id="startDate" /></div>
+    <div class="input_field"><label for="backgroundColor">背景顏色</label><input type="color" id="backgroundColor" /></div>
+    <div class="input_field">
+        <label for="backgroundImage">背景圖片（可填網址或選擇檔案）</label>
+        <input type="text" id="backgroundImage" />
+        <input type="file" id="backgroundImageFile" />
+    </div>
+    <div class="input_field">
+        <label for="coverArt">封面圖（可填網址或選擇檔案）</label>
+        <input type="text" id="coverArt" />
+        <input type="file" id="coverArtFile" />
+    </div>
+    <div class="input_field"><label for="coverDescription">封面說明</label><input type="text" id="coverDescription" /></div>
+    
+    <div class="daySetting">
+        <div class="input_field"><label for="day1Style">第一天直播樣式</label>
+            <select name="day1Style" id="day1Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day1Title">第一天直播標題</label><input type="text" id="day1Title" /></div>
+        <div class="input_field"><label for="day1Tag">第一天直播標籤（以 , 隔開）</label><input type="text" id="day1Tag" /></div>
+        <div class="input_field"><label for="day1Time">第一天直播時間</label><input type="text" id="day1Time" /></div>
+    </div>
+    
+    <div class="daySetting">
+        <div class="input_field"><label for="day2Style">第二天直播樣式</label>
+            <select name="day2Style" id="day2Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day2Title">第二天直播標題</label><input type="text" id="day2Title" /></div>
+        <div class="input_field"><label for="day2Tag">第二天直播標籤（以 , 隔開）</label><input type="text" id="day2Tag" /></div>
+        <div class="input_field"><label for="day2Time">第二天直播時間</label><input type="text" id="day2Time" /></div>
+    </div>
+
+    <div class="daySetting">
+        <div class="input_field"><label for="day3Style">第三天直播樣式</label>
+            <select name="day3Style" id="day3Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day3Title">第三天直播標題</label><input type="text" id="day3Title" /></div>
+        <div class="input_field"><label for="day3Tag">第三天直播標籤（以 , 隔開）</label><input type="text" id="day3Tag" /></div>
+        <div class="input_field"><label for="day3Time">第三天直播時間</label><input type="text" id="day3Time" /></div>
+    </div>
+    
+    <div class="daySetting">
+        <div class="input_field"><label for="day4Style">第四天直播樣式</label>
+            <select name="day4Style" id="day4Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day4Title">第四天直播標題</label><input type="text" id="day4Title" /></div>
+        <div class="input_field"><label for="day4Tag">第四天直播標籤（以 , 隔開）</label><input type="text" id="day4Tag" /></div>
+        <div class="input_field"><label for="day4Time">第四天直播時間</label><input type="text" id="day4Time" /></div>
+    </div>
+
+    <div class="daySetting">
+        <div class="input_field"><label for="day5Style">第五天直播樣式</label>
+            <select name="day5Style" id="day5Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day5Title">第五天直播標題</label><input type="text" id="day5Title" /></div>
+        <div class="input_field"><label for="day5Tag">第五天直播標籤（以 , 隔開）</label><input type="text" id="day5Tag" /></div>
+        <div class="input_field"><label for="day5Time">第五天直播時間</label><input type="text" id="day5Time" /></div>
+    </div>
+
+    <div class="daySetting">
+        <div class="input_field"><label for="day6Style">第六天直播樣式</label>
+            <select name="day6Style" id="day6Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day6Title">第六天直播標題</label><input type="text" id="day6Title" /></div>
+        <div class="input_field"><label for="day6Tag">第六天直播標籤（以 , 隔開）</label><input type="text" id="day6Tag" /></div>
+        <div class="input_field"><label for="day6Time">第六天直播時間</label><input type="text" id="day6Time" /></div>
+    </div>
+
+    <div class="daySetting">
+        <div class="input_field"><label for="day7Style">第七天直播樣式</label>
+            <select name="day7Style" id="day7Style">
+                <option value="work">工作</option>
+                <option value="holiday">假日</option>
+            </select>
+        </div>
+        <div class="input_field"><label for="day7Title">第七天直播標題</label><input type="text" id="day7Title" /></div>
+        <div class="input_field"><label for="day7Tag">第七天直播標籤（以 , 隔開）</label><input type="text" id="day7Tag" /></div>
+        <div class="input_field"><label for="day7Time">第七天直播時間</label><input type="text" id="day7Time" /></div>
+    </div>
+</section>
+
+<button id="download_weekly">下載週表 (不支援 iOS)</button>
+<section class="weekly_container">
+    <section class="weekly">
+        <section class="weekly_left_part">
+            <div class="weekly_author_part"></div>
+        </section>
+        <section class="weekly_right_part">
+            <h1>本週行事曆</h1>
+            <ul class="weekly_items">
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+            </ul>
+        </section>
+    </section>
+</section>
+
+<script src='/scripts/weekly.js'></script>        </section>
+        <footer>
+    <a href="/"><img src="/images/white_logo.webp" alt="悠太翼白色 Logo"/></a>
+</footer>
+
+        <script src='/scripts/dom-to-image.js'></script>
+        <script src='/scripts/main.js'></script>
+    </body>
+</html>
