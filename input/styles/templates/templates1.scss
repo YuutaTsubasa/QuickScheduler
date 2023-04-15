@@ -7,6 +7,51 @@ section.weekly_container {
     aspect-ratio: 16 / 9;
 
     section.weekly {
+        --item-content-background-color-base: rgba(30, 54, 109, 0.7);
+        --item-content-background-color-decorator: rgba(13, 21, 101, 0.7);
+        
+        &.styleColor_red {
+            --item-content-background-color-base: hsla(0, 57%, 27%, 0.7);
+            --item-content-background-color-decorator: hsla(0, 77%, 22%, 0.7);
+        }
+
+        &.styleColor_orange {
+            --item-content-background-color-base: hsla(22, 57%, 27%, 0.7);
+            --item-content-background-color-decorator: hsla(22, 77%, 22%, 0.7);
+        }
+
+        &.styleColor_yellow {
+            --item-content-background-color-base: hsla(57, 57%, 27%, 0.7);
+            --item-content-background-color-decorator: hsla(57, 77%, 22%, 0.7);
+        }
+
+        &.styleColor_green {
+            --item-content-background-color-base: hsla(129, 57%, 27%, 0.7);
+            --item-content-background-color-decorator: hsla(129, 77%, 22%, 0.7);
+        }
+
+        &.styleColor_purple {
+            --item-content-background-color-base: hsla(275, 57%, 27%, 0.7);
+            --item-content-background-color-decorator: hsla(275, 77%, 22%, 0.7);
+        }
+
+        &.styleColor_black {
+            --item-content-background-color-base: hsla(0, 0%, 24%, 0.7);
+            --item-content-background-color-decorator: hsla(0, 0%, 0%, 0.7);
+        }
+
+        &.styleColor_white {
+            --item-content-background-color-base: hsla(0, 0%, 100%, 0.7);
+            --item-content-background-color-decorator: hsla(0, 0%, 78%, 0.7);
+        }
+        
+        --item-content-background: repeating-linear-gradient( 
+            -45deg, 
+            var(--item-content-background-color-base), 
+            var(--item-content-background-color-base) 5px, 
+            var(--item-content-background-color-decorator) 5px, 
+            var(--item-content-background-color-decorator) 25px );
+
         position: absolute;
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -137,7 +182,7 @@ section.weekly_container {
                     height: 95%;
                     box-sizing: border-box;
                     border-radius: 10px;
-                    background: repeating-linear-gradient( -45deg, rgba(30, 54, 109, 0.7), rgba(30, 54, 109, 0.7) 5px, rgba(13, 21, 101, 0.7) 5px, rgba(13, 21, 101, 0.7) 25px );
+                    background: var(--item-content-background);
                     color: white;
                     font-weight: 700;
                     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);

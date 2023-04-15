@@ -31,6 +31,17 @@ document.addEventListener("DOMContentLoaded", function(){
             weekly.style.backgroundImage = backgroundImageUrl
                 ?`url("${backgroundImageUrl}")`
                 : "";
+
+            const styleColorSettingName = "styleColor";
+            weekly.classList.forEach(className => {
+                if (className.includes(styleColorSettingName)){
+                    weekly.classList.remove(className);
+                }
+            });
+            const styleColor = document.querySelector(`#${styleColorSettingName}`).value;
+            if (styleColor){
+                weekly.classList.add(`${styleColorSettingName}_${styleColor}`);
+            }
                 
             const weeklyLeftPart = document.querySelector(".weekly_left_part");
             const coverArtUrl = document.querySelector("#coverArtUrl").value;

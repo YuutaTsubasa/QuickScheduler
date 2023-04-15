@@ -7,6 +7,40 @@ section.weekly_container {
     aspect-ratio: 16 / 9;
 
     section.weekly {
+        --date-background-color: rgb(33, 19, 106);
+        --date-color: white;
+        --logo-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%);
+
+        &.styleColor_red {
+            --date-background-color: hsl(0, 70%, 25%);
+        }
+
+        &.styleColor_orange {
+            --date-background-color: hsl(30, 70%, 25%);
+        }
+
+        &.styleColor_yellow {
+            --date-background-color: hsl(65, 70%, 25%);
+        }
+
+        &.styleColor_green {
+            --date-background-color: hsl(121, 70%, 25%);
+        }
+
+        &.styleColor_purple {
+            --date-background-color: rgb(61, 19, 106);
+        }
+
+        &.styleColor_black {
+            --date-background-color: rgb(0, 0, 0);
+        }
+
+        &.styleColor_white {
+            --date-background-color: rgb(208, 208, 208);
+            --date-color: black;
+            --logo-color: none;
+        }
+
         position: absolute;
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -108,8 +142,8 @@ section.weekly_container {
                         font-weight: 700;
                         width: 300px;
                         height: 100%;
-                        background-color: rgb(33, 19, 106);
-                        color: white;
+                        background-color: var(--date-background-color);
+                        color: var(--date-color);
     
                         .content_part {
                             display: flex;
@@ -201,7 +235,7 @@ section.weekly_container {
         
                     div {
                         display: flex;
-                        color: white;
+                        color: var(--date-color);
                         text-decoration: none;
                         height: 50px;
                         text-align: center;
@@ -215,12 +249,12 @@ section.weekly_container {
                         transition: background-color 0.5s, 
                                     border 0.5s;
         
-                        background-color: rgb(33, 19, 106);
+                        background-color: var(--date-background-color);
                         border: 1px solid white;
         
                         img.logo {
                             height: 75%;
-                            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%);
+                            filter: var(--logo-color);
                         }
         
                         &:hover, &:active {
