@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", function(){
         const updateWeekly = function(){
             const weekly = document.querySelector(".weekly");
             const backgroundColor = document.querySelector("#backgroundColor").value;
-            const backgroundImage = document.querySelector("#backgroundImage").value;
+            const backgroundImageUrl = document.querySelector("#backgroundImageUrl").value;
             weekly.style.backgroundColor = backgroundColor;
-            weekly.style.backgroundImage = backgroundImage
-                ?`url("${backgroundImage}")`
+            weekly.style.backgroundImage = backgroundImageUrl
+                ?`url("${backgroundImageUrl}")`
                 : "";
-
+                
             const weeklyLeftPart = document.querySelector(".weekly_left_part");
-            const coverArtUrl = document.querySelector("#coverArt").value;
+            const coverArtUrl = document.querySelector("#coverArtUrl").value;
             weeklyLeftPart.style.backgroundImage = coverArtUrl ? `url("${coverArtUrl}")` : "";
     
             const weeklyAuthorPart = document.querySelector(".weekly_author_part");
@@ -46,6 +46,25 @@ document.addEventListener("DOMContentLoaded", function(){
                 weeklyAuthorPart.style.display = "none";
             }
     
+            const weeklyTitle = document.querySelector(".weekly_title");
+            const titleDescription = document.querySelector("#titleDescription").value;
+            weeklyTitle.innerHTML = titleDescription 
+                ? titleDescription
+                : "本週行事曆";
+
+            const communitySettings = document.querySelectorAll(".community_setting input");
+            const weeklyCommunity = document.querySelector(".weekly_community ul");
+            
+            weeklyCommunity.innerHTML = "";
+            for(let communitySetting of communitySettings){
+                if (!communitySetting.value)
+                    continue;
+
+                let className = communitySetting.id.replace("community_", "");
+                weeklyCommunity.innerHTML += 
+                    `<li><div class="${className}"><img src="/images/community_logo/${className}.svg" alt="${className}" class="logo"/>${communitySetting.value}</div></li>`
+            }
+
             const startDate = new Date(document.querySelector("#startDate").value);
             let contents = [];
             for(let day = 1 ; day <= 7 ; ++day){
@@ -63,8 +82,15 @@ document.addEventListener("DOMContentLoaded", function(){
             const dayItems = document.querySelectorAll(".weekly_item");
             for(let day = 0; day < 7; ++day){
                 dayItems[day].querySelector(".date_part").innerText = contents[day].date.getMMDDFormat();
-                dayItems[day].querySelector(".time_part").innerText = 
-                    `(${new Intl.DateTimeFormat('zh-TW', options).format(contents[day].date)[1]}) ${contents[day].time}`;
+
+                let weekday = `(${new Intl.DateTimeFormat('zh-TW', options).format(contents[day].date)[1]})`;
+                let weekdayPart = dayItems[day].querySelector(".weekday_part");
+                let timeDescriptionPart = dayItems[day].querySelector(".time_description_part");
+                let timePart = dayItems[day].querySelector(".time_part");
+
+                if (weekdayPart) weekdayPart.innerText = weekday;
+                if (timeDescriptionPart) timeDescriptionPart.innerText = contents[day].time;
+                if (timePart) timePart.innerText = `(${weekday} ${contents[day].time}`;
                 
                 const content = dayItems[day].querySelector(".content");
                 if (contents[day].style === "holiday"){
@@ -96,6 +122,31 @@ document.addEventListener("DOMContentLoaded", function(){
             if (memorizedContent && input.getAttribute("type") !== "file") {
                 input.value = memorizedContent;
             }
+        });
+
+        document.querySelectorAll(".file_field").forEach(fileFieldSet => {
+            let textField = fileFieldSet.querySelector("input[type=text]");
+            let fileField = fileFieldSet.querySelector("input[type=file]");
+            let hiddenField = fileFieldSet.querySelector("input[type=hidden]");
+            
+            if (textField.value)
+                hiddenField.value = textField.value;
+
+            textField.addEventListener("change", function(){
+                hiddenField.value = textField.value;
+                fileField.value = "";
+                updateWeekly();
+            });
+
+            fileField.addEventListener("change", function(event){
+                textField.value = "";
+                const reader = new FileReader();
+                reader.readAsDataURL(event.target.files[0]);
+                reader.onload = () => {
+                    hiddenField.value = reader.result;
+                    updateWeekly();
+                };
+            });
         });
     
         updateWeekly();
@@ -129,19 +180,5 @@ document.addEventListener("DOMContentLoaded", function(){
                     });
                 });
         });
-
-        let fileInputs = document.querySelectorAll("input[type=file]");
-        if (fileInputs.length > 0){
-            for (let fileInput of fileInputs){
-                fileInput.addEventListener("change", function(event){
-                    const reader = new FileReader();
-                    reader.readAsDataURL(fileInput.files[0]);
-                    reader.onload = () => {
-                        event.target.parentElement.querySelector("input[type=text]").value = reader.result;
-                        updateWeekly();
-                    };
-                })
-            }
-        }
     }
 });

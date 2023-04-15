@@ -8,11 +8,11 @@ section.weekly_container section.weekly .weekly_left_part .weekly_author_part { 
 
 section.weekly_container section.weekly .weekly_right_part { padding: 15px 15px 0px 15px; background-color: rgba(10, 10, 10, 0.7); }
 
-section.weekly_container section.weekly .weekly_right_part h1 { display: flex; margin: 15px 0; justify-content: center; align-items: center; gap: 25px; font-size: 50pt; color: white; -webkit-text-stroke: 2px black; min-height: 150px; }
+section.weekly_container section.weekly .weekly_right_part .weekly_title { display: flex; margin: 15px 0; justify-content: center; align-items: center; gap: 25px; font-size: 50pt; color: white; --text-shadow-size: 3px; --text-shadow-minus-size: calc(var(--text-shadow-size) * -1); text-shadow: var(--text-shadow-minus-size) var(--text-shadow-minus-size) 0 #000, 0 var(--text-shadow-minus-size) 0 #000, var(--text-shadow-size) var(--text-shadow-minus-size) 0 #000, var(--text-shadow-size) 0 0 #000, var(--text-shadow-size) var(--text-shadow-size) 0 #000, 0 var(--text-shadow-size) 0 #000, var(--text-shadow-minus-size) var(--text-shadow-size) 0 #000, var(--text-shadow-minus-size) 0 0 #000; min-height: 150px; }
 
-section.weekly_container section.weekly .weekly_right_part h1 img.weekly_white_logo { height: 150px; }
+section.weekly_container section.weekly .weekly_right_part .weekly_title img.weekly_white_logo { height: 150px; }
 
-section.weekly_container section.weekly .weekly_right_part h1 img.weekly_title { height: 100px; }
+section.weekly_container section.weekly .weekly_right_part .weekly_title img.weekly_title { height: 100px; }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items { display: grid; grid-template-columns: auto; gap: 10px; width: 100%; padding: 0; }
 
@@ -33,3 +33,35 @@ section.weekly_container section.weekly .weekly_right_part ul.weekly_items .cont
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; column-gap: 10px; row-gap: 15px; margin-right: 15px; }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags li { display: block; text-align: center; font-size: 15pt; padding: 10px 20px; min-width: 60px; background-color: #1e1e1e; color: white; border-radius: 20px; border: 1px solid white; text-shadow: none; }
+
+section.weekly_container section.weekly nav.weekly_community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: wrap; list-style-type: none; gap: 8px; font-size: 15pt; }
+
+section.weekly_container section.weekly nav.weekly_community ul li { margin: 0px; padding: 0px; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: white; text-decoration: none; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; border: 2px solid; border-radius: 50px; transition: background-color 0.5s,  border 0.5s; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.twitter { background-color: #1eaefb; border-color: #1eaefb; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.youtube { background-color: #eb0000; border-color: #eb0000; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.facebook { background-color: #1a5dcd; border-color: #1a5dcd; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.instagram { background-color: #ee0799; border-color: #ee0799; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.plurk { background-color: #ff574d; border-color: #ff574d; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div.twitch { background-color: #8503d6; border-color: #8503d6; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div img.logo { height: 75%; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); }
+
+section.weekly_container section.weekly nav.weekly_community ul li div:hover, section.weekly_container section.weekly nav.weekly_community ul li div:active { background-color: white; border: 2px solid black; color: black; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div:hover img.logo, section.weekly_container section.weekly nav.weekly_community ul li div:active img.logo { filter: none; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community { margin-top: 40px; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul { display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-end; font-size: 17pt; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul li { display: flex; align-items: center; justify-content: center; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul li div { width: max-content; }

@@ -12,39 +12,39 @@ section.content { display: flex; flex-direction: column; width: 930px; margin-to
 
 @media (max-width: 930px) { section.content { width: 80%; } }
 
-nav.community ul, nav.weekly_community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: wrap; list-style-type: none; gap: 8px; font-size: 15pt; }
+nav.community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: wrap; list-style-type: none; gap: 8px; font-size: 15pt; }
 
-nav.community ul li, nav.weekly_community ul li { margin: 0px; padding: 0px; }
+nav.community ul li { margin: 0px; padding: 0px; }
 
-nav.community ul li a, nav.weekly_community ul li a { display: flex; color: white; text-decoration: none; width: 175px; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; border: 2px solid; border-radius: 50px; transition: background-color 0.5s,  border 0.5s; }
+nav.community ul li a { display: flex; color: white; text-decoration: none; width: 175px; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; border: 2px solid; border-radius: 50px; transition: background-color 0.5s,  border 0.5s; }
 
-nav.community ul li a.twitter, nav.weekly_community ul li a.twitter { background-color: #1eaefb; border-color: #1eaefb; }
+nav.community ul li a.twitter { background-color: #1eaefb; border-color: #1eaefb; }
 
-nav.community ul li a.youtube, nav.weekly_community ul li a.youtube { background-color: #eb0000; border-color: #eb0000; }
+nav.community ul li a.youtube { background-color: #eb0000; border-color: #eb0000; }
 
-nav.community ul li a.facebook, nav.weekly_community ul li a.facebook { background-color: #1a5dcd; border-color: #1a5dcd; }
+nav.community ul li a.facebook { background-color: #1a5dcd; border-color: #1a5dcd; }
 
-nav.community ul li a.instagram, nav.weekly_community ul li a.instagram { background-color: #ee0799; border-color: #ee0799; }
+nav.community ul li a.instagram { background-color: #ee0799; border-color: #ee0799; }
 
-nav.community ul li a.plurk, nav.weekly_community ul li a.plurk { background-color: #ff574d; border-color: #ff574d; }
+nav.community ul li a.plurk { background-color: #ff574d; border-color: #ff574d; }
 
-nav.community ul li a img.logo, nav.weekly_community ul li a img.logo { height: 75%; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); }
+nav.community ul li a img.logo { height: 75%; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); }
 
-nav.community ul li a:hover, nav.community ul li a:active, nav.weekly_community ul li a:hover, nav.weekly_community ul li a:active { background-color: white; border: 2px solid black; color: black; }
+nav.community ul li a:hover, nav.community ul li a:active { background-color: white; border: 2px solid black; color: black; }
 
-nav.community ul li a:hover img.logo, nav.community ul li a:active img.logo, nav.weekly_community ul li a:hover img.logo, nav.weekly_community ul li a:active img.logo { filter: none; }
+nav.community ul li a:hover img.logo, nav.community ul li a:active img.logo { filter: none; }
 
-@media (max-width: 930px) { nav.community.community ul li, nav.weekly_community.community ul li { width: 95%; } }
+@media (max-width: 930px) { nav.community.community ul li { width: 95%; } }
 
-@media (max-width: 930px) { nav.community.community ul li a, nav.weekly_community.community ul li a { width: 100%; } }
+@media (max-width: 930px) { nav.community.community ul li a { width: 100%; } }
 
-nav.community.weekly_community, nav.weekly_community.weekly_community { margin-top: 50px; }
+nav.community.weekly_community { margin-top: 50px; }
 
-nav.community.weekly_community ul, nav.weekly_community.weekly_community ul { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); font-size: 17pt; }
+nav.community.weekly_community ul { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); font-size: 17pt; }
 
-nav.community.weekly_community ul li, nav.weekly_community.weekly_community ul li { display: flex; align-items: center; justify-content: center; }
+nav.community.weekly_community ul li { display: flex; align-items: center; justify-content: center; }
 
-nav.community.weekly_community ul li a, nav.weekly_community.weekly_community ul li a { width: 98%; }
+nav.community.weekly_community ul li a { width: 98%; }
 
 footer { width: 100%; padding-top: 15px; padding-bottom: 15px; background: black; display: flex; align-items: center; justify-content: center; }
 

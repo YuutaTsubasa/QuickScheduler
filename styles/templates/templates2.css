@@ -1,0 +1,59 @@
+section.weekly_container { position: relative; align-self: center; width: 95vw; margin-bottom: 25px; aspect-ratio: 16 / 9; }
+
+section.weekly_container section.weekly { position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+
+section.weekly_container section.weekly .weekly_left_part { position: relative; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+
+section.weekly_container section.weekly .weekly_left_part .weekly_author_part { position: absolute; bottom: 0; width: 100%; padding-top: 20px; padding-bottom: 20px; text-align: center; color: white; font-weight: 700; font-size: 20pt; background-color: rgba(0, 0, 0, 0.75); }
+
+section.weekly_container section.weekly .weekly_right_part { padding: 15px 15px 0px 15px; background-color: rgba(10, 10, 10, 0.7); }
+
+section.weekly_container section.weekly .weekly_right_part .weekly_title { display: flex; margin: 8px 0; justify-content: center; align-items: center; gap: 25px; font-size: 50pt; color: white; --text-shadow-size: 2px; --text-shadow-minus-size: calc(var(--text-shadow-size) * -1); text-shadow: var(--text-shadow-minus-size) var(--text-shadow-minus-size) 0 #000, 0 var(--text-shadow-minus-size) 0 #000, var(--text-shadow-size) var(--text-shadow-minus-size) 0 #000, var(--text-shadow-size) 0 0 #000, var(--text-shadow-size) var(--text-shadow-size) 0 #000, 0 var(--text-shadow-size) 0 #000, var(--text-shadow-minus-size) var(--text-shadow-size) 0 #000, var(--text-shadow-minus-size) 0 0 #000; min-height: 100px; }
+
+section.weekly_container section.weekly .weekly_right_part .weekly_title img.weekly_white_logo { height: 150px; }
+
+section.weekly_container section.weekly .weekly_right_part .weekly_title img.weekly_title { height: 100px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items { display: grid; grid-template-columns: 100%; justify-items: center; gap: 15px; width: 100%; padding: 0; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item { background-color: white; display: grid; align-items: center; grid-template-columns: max-content minmax(0, 1fr); gap: 10px; list-style-type: none; width: 80%; height: 100px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item:has(.stream_off) { background-color: #565656; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item:has(.stream_off) .weekly_item_date { background-color: #565656; color: #999999; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date { display: flex; align-items: center; justify-content: center; font-weight: 700; width: 300px; height: 100%; background-color: #21136a; color: white; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 25px; width: 96%; height: 30px; box-sizing: border-box; padding: 2px; gap: 5px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .date_part { margin-left: 7px; width: 150px; font-size: 28pt; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .time_description_part { width: 160px; height: 100%; font-size: 25px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; color: black; font-weight: 700; padding-left: 30px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content.stream_off { display: flex; justify-content: center; letter-spacing: 20px; color: transparent; -webkit-text-stroke: 2px #999999; font-size: 50px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; column-gap: 10px; row-gap: 15px; margin-right: 15px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags li { display: block; text-align: center; font-size: 15pt; padding: 10px 20px; min-width: 60px; background-color: #1e1e1e; color: white; border-radius: 20px; border: 1px solid white; text-shadow: none; }
+
+section.weekly_container section.weekly nav.weekly_community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: wrap; list-style-type: none; gap: 8px; font-size: 15pt; }
+
+section.weekly_container section.weekly nav.weekly_community ul li { margin: 0px; padding: 0px; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: white; text-decoration: none; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; transition: background-color 0.5s,  border 0.5s; background-color: #21136a; border: 1px solid white; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div img.logo { height: 75%; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); }
+
+section.weekly_container section.weekly nav.weekly_community ul li div:hover, section.weekly_container section.weekly nav.weekly_community ul li div:active { background-color: white; border: 2px solid black; color: black; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div:hover img.logo, section.weekly_container section.weekly nav.weekly_community ul li div:active img.logo { filter: none; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community { margin-top: 60px; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul { display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-end; font-size: 17pt; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul li { display: flex; align-items: center; justify-content: center; }
+
+section.weekly_container section.weekly nav.weekly_community.weekly_community ul li div { width: max-content; }
