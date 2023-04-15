@@ -1,6 +1,20 @@
 section.weekly_container { position: relative; align-self: center; width: 95vw; margin-bottom: 25px; aspect-ratio: 16 / 9; }
 
-section.weekly_container section.weekly { position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+section.weekly_container section.weekly { --date-background-color: rgb(33, 19, 106); --date-color: white; --logo-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+
+section.weekly_container section.weekly.styleColor_red { --date-background-color: hsl(0, 70%, 25%); }
+
+section.weekly_container section.weekly.styleColor_orange { --date-background-color: hsl(30, 70%, 25%); }
+
+section.weekly_container section.weekly.styleColor_yellow { --date-background-color: hsl(65, 70%, 25%); }
+
+section.weekly_container section.weekly.styleColor_green { --date-background-color: hsl(121, 70%, 25%); }
+
+section.weekly_container section.weekly.styleColor_purple { --date-background-color: rgb(61, 19, 106); }
+
+section.weekly_container section.weekly.styleColor_black { --date-background-color: rgb(0, 0, 0); }
+
+section.weekly_container section.weekly.styleColor_white { --date-background-color: rgb(208, 208, 208); --date-color: black; --logo-color: none; }
 
 section.weekly_container section.weekly .weekly_left_part { position: relative; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
@@ -22,7 +36,7 @@ section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.we
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item:has(.stream_off) .weekly_item_date { background-color: #565656; color: #999999; }
 
-section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date { display: flex; align-items: center; justify-content: center; font-weight: 700; width: 300px; height: 100%; background-color: #21136a; color: white; }
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date { display: flex; align-items: center; justify-content: center; font-weight: 700; width: 300px; height: 100%; background-color: var(--date-background-color); color: var(--date-color); }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 25px; width: 96%; height: 30px; box-sizing: border-box; padding: 2px; gap: 5px; }
 
@@ -42,9 +56,9 @@ section.weekly_container section.weekly nav.weekly_community ul { margin: 25px 0
 
 section.weekly_container section.weekly nav.weekly_community ul li { margin: 0px; padding: 0px; }
 
-section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: white; text-decoration: none; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; transition: background-color 0.5s,  border 0.5s; background-color: #21136a; border: 1px solid white; }
+section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: var(--date-color); text-decoration: none; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; transition: background-color 0.5s,  border 0.5s; background-color: var(--date-background-color); border: 1px solid white; }
 
-section.weekly_container section.weekly nav.weekly_community ul li div img.logo { height: 75%; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); }
+section.weekly_container section.weekly nav.weekly_community ul li div img.logo { height: 75%; filter: var(--logo-color); }
 
 section.weekly_container section.weekly nav.weekly_community ul li div:hover, section.weekly_container section.weekly nav.weekly_community ul li div:active { background-color: white; border: 2px solid black; color: black; }
 

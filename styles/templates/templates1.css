@@ -1,6 +1,25 @@
 section.weekly_container { position: relative; align-self: center; width: 95vw; margin-bottom: 25px; aspect-ratio: 16 / 9; }
 
-section.weekly_container section.weekly { position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+section.weekly_container section.weekly { --item-content-background-color-base: rgba(30, 54, 109, 0.7); --item-content-background-color-decorator: rgba(13, 21, 101, 0.7); --item-content-background: repeating-linear-gradient( 
+            -45deg, 
+            var(--item-content-background-color-base), 
+            var(--item-content-background-color-base) 5px, 
+            var(--item-content-background-color-decorator) 5px, 
+            var(--item-content-background-color-decorator) 25px ); position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+
+section.weekly_container section.weekly.styleColor_red { --item-content-background-color-base: hsla(0, 57%, 27%, 0.7); --item-content-background-color-decorator: hsla(0, 77%, 22%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_orange { --item-content-background-color-base: hsla(22, 57%, 27%, 0.7); --item-content-background-color-decorator: hsla(22, 77%, 22%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_yellow { --item-content-background-color-base: hsla(57, 57%, 27%, 0.7); --item-content-background-color-decorator: hsla(57, 77%, 22%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_green { --item-content-background-color-base: hsla(129, 57%, 27%, 0.7); --item-content-background-color-decorator: hsla(129, 77%, 22%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_purple { --item-content-background-color-base: hsla(275, 57%, 27%, 0.7); --item-content-background-color-decorator: hsla(275, 77%, 22%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_black { --item-content-background-color-base: hsla(0, 0%, 24%, 0.7); --item-content-background-color-decorator: hsla(0, 0%, 0%, 0.7); }
+
+section.weekly_container section.weekly.styleColor_white { --item-content-background-color-base: hsla(0, 0%, 100%, 0.7); --item-content-background-color-decorator: hsla(0, 0%, 78%, 0.7); }
 
 section.weekly_container section.weekly .weekly_left_part { position: relative; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
@@ -26,7 +45,7 @@ section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.we
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .time_part { width: 160px; height: 100%; font-size: 30px; }
 
-section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; border-radius: 10px; background: repeating-linear-gradient(-45deg, rgba(30, 54, 109, 0.7), rgba(30, 54, 109, 0.7) 5px, rgba(13, 21, 101, 0.7) 5px, rgba(13, 21, 101, 0.7) 25px); color: white; font-weight: 700; box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); text-shadow: 0.2em 0.2em 0.4em black; padding-left: 30px; }
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; border-radius: 10px; background: var(--item-content-background); color: white; font-weight: 700; box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); text-shadow: 0.2em 0.2em 0.4em black; padding-left: 30px; }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content.stream_off { display: flex; justify-content: center; letter-spacing: 20px; color: transparent; -webkit-text-stroke: 2px #999999; background-color: #808080; background: repeating-linear-gradient(-45deg, rgba(73, 73, 73, 0.7), rgba(73, 73, 73, 0.7) 5px, rgba(128, 128, 128, 0.7) 5px, rgba(128, 128, 128, 0.7) 25px); }
 
