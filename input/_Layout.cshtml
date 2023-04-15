@@ -27,8 +27,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet"/>
         <link href='@Context.GetLink("/styles/main.css")' rel="stylesheet"/>
         <link rel="icon" href='@Context.GetLink("/favicon.ico")'/>
-        @if (Document.GetBool("IsTemplate")) {
-            <link href='@Context.GetLink(Document.GetString("TemplateCssFile"))' rel='stylesheet'/>
+        @{
+            var templateCssFile = Document.GetString("TemplateCssFile");
+        }
+        @if (templateCssFile != null) {
+            <link href='@Context.GetLink(templateCssFile)' rel='stylesheet'/>
         }
     </head>
     <body>

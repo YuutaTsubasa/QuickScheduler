@@ -24,7 +24,7 @@
     }
 
     
-    .daySetting {
+    .day_setting, .community_setting {
         display: flex;
         flex-direction: column;
         padding: 15px;
@@ -34,7 +34,7 @@
         border-radius: 20px;
     }
 
-    .daySetting .input_field {
+    .day_setting .input_field, .community_setting .input_field {
         width: 95%;
         color: rgb(38, 38, 38);
     }
@@ -48,24 +48,59 @@
         width: 100%;
         margin-top: 5px;
     }
+
+    .overflow_hidden{
+        overflow: hidden;
+    }
 </style>
 
 <section class="data_form">
     <div class="input_field"><label for="startDate">開始時間</label><input type="date" id="startDate" /></div>
+    <div class="input_field"><label for="titleDescription">標題文字</label><input type="text" id="titleDescription" /></div>
     <div class="input_field"><label for="backgroundColor">背景顏色</label><input type="color" id="backgroundColor" /></div>
-    <div class="input_field">
+    <div class="input_field file_field">
         <label for="backgroundImage">背景圖片（可填網址或選擇檔案）</label>
-        <input type="text" id="backgroundImage" />
+        <input type="text" id="backgroundImage" class="overflow_hidden"/>
         <input type="file" id="backgroundImageFile" />
+        <input type="hidden" id="backgroundImageUrl" />
     </div>
-    <div class="input_field">
+    <div class="input_field file_field">
         <label for="coverArt">封面圖（可填網址或選擇檔案）</label>
-        <input type="text" id="coverArt" />
+        <input type="text" id="coverArt" class="overflow_hidden"/>
         <input type="file" id="coverArtFile" />
+        <input type="hidden" id="coverArtUrl" />
     </div>
     <div class="input_field"><label for="coverDescription">封面說明</label><input type="text" id="coverDescription" /></div>
     
-    <div class="daySetting">
+    <div class="community_setting">
+        <h3>社群設定</h3>
+        <div class="input_field">
+            <label for="community_youtube">Youtube</label>
+            <input type="text" id="community_youtube" />
+        </div>
+        <div class="input_field">
+            <label for="community_twitch">Twitch</label>
+            <input type="text" id="community_twitch" />
+        </div>
+        <div class="input_field">
+            <label for="community_twitter">Twitter</label>
+            <input type="text" id="community_twitter" />
+        </div>
+       <div class="input_field">
+            <label for="community_facebook">Facebook</label>
+            <input type="text" id="community_facebook" />
+        </div>
+        <div class="input_field">
+            <label for="community_instagram">Instagram</label>
+            <input type="text" id="community_instagram" />
+        </div>
+        <div class="input_field">
+            <label for="community_plurk">Plurk</label>
+            <input type="text" id="community_plurk" />
+        </div>
+    </div>
+
+    <div class="day_setting">
         <div class="input_field"><label for="day1Style">第一天直播樣式</label>
             <select name="day1Style" id="day1Style">
                 <option value="work">工作</option>
@@ -77,7 +112,7 @@
         <div class="input_field"><label for="day1Time">第一天直播時間</label><input type="text" id="day1Time" /></div>
     </div>
     
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day2Style">第二天直播樣式</label>
             <select name="day2Style" id="day2Style">
                 <option value="work">工作</option>
@@ -89,7 +124,7 @@
         <div class="input_field"><label for="day2Time">第二天直播時間</label><input type="text" id="day2Time" /></div>
     </div>
 
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day3Style">第三天直播樣式</label>
             <select name="day3Style" id="day3Style">
                 <option value="work">工作</option>
@@ -101,7 +136,7 @@
         <div class="input_field"><label for="day3Time">第三天直播時間</label><input type="text" id="day3Time" /></div>
     </div>
     
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day4Style">第四天直播樣式</label>
             <select name="day4Style" id="day4Style">
                 <option value="work">工作</option>
@@ -113,7 +148,7 @@
         <div class="input_field"><label for="day4Time">第四天直播時間</label><input type="text" id="day4Time" /></div>
     </div>
 
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day5Style">第五天直播樣式</label>
             <select name="day5Style" id="day5Style">
                 <option value="work">工作</option>
@@ -125,7 +160,7 @@
         <div class="input_field"><label for="day5Time">第五天直播時間</label><input type="text" id="day5Time" /></div>
     </div>
 
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day6Style">第六天直播樣式</label>
             <select name="day6Style" id="day6Style">
                 <option value="work">工作</option>
@@ -137,7 +172,7 @@
         <div class="input_field"><label for="day6Time">第六天直播時間</label><input type="text" id="day6Time" /></div>
     </div>
 
-    <div class="daySetting">
+    <div class="day_setting">
         <div class="input_field"><label for="day7Style">第七天直播樣式</label>
             <select name="day7Style" id="day7Style">
                 <option value="work">工作</option>
