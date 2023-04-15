@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function(){
     let weekly = document.querySelector(".weekly");
     if (weekly){
+        Date.prototype.addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        }
+        
         Date.prototype.getMMDDFormat = function() {
             var mm = this.getMonth() + 1; // getMonth() is zero-based
             var dd = this.getDate();
@@ -43,8 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
             const startDate = new Date(document.querySelector("#startDate").value);
             let contents = [];
             for(let day = 1 ; day <= 7 ; ++day){
-                let currentDate = new Date();
-                currentDate.setDate(startDate.getDate() + (day - 1));
+                let currentDate = startDate.addDays(day - 1);
                 contents.push({
                     "date": currentDate,
                     "title": document.querySelector(`#day${day}Title`).value,
