@@ -4,6 +4,9 @@ PageTitle: 快速週表產生器
 SiteAuthor: 悠太翼
 SiteAuthorTitle: VTuber / VCoder / VSinger
 SiteDescription: 用來快速產生週表的小工具
+TemplateSources: templates/*
+AllTemplates: => Context.Outputs.FilterSources(Context.GetString("TemplateSources")).ToList()
+IsTemplate: => Context.GetDocumentList("AllTemplates").ContainsById(Document)
 GitHubOwner: "YuutaTsubasa"
 GitHubName: "QuickScheduler"
 GitHubToken: => Config.FromSetting<string>("GITHUB_TOKEN")

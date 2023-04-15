@@ -1,4 +1,4 @@
-section.post_list {
+section.template_list {
     display: flex;
     flex-wrap: wrap;
     column-gap: 15px;
@@ -11,8 +11,8 @@ section.post_list {
         justify-content: space-between;
     }
 
-    .post {
-        width: 218px;
+    .template {
+        width: 436px;
         height: max-content;
 
         @media (max-width: 930px) {
@@ -111,6 +111,7 @@ section.post_list {
             img.title_icon {
                 width: 15px;
                 height: 15px;
+                margin-left: 0px;
                 margin-right: 5px;
                 filter: invert(50%) sepia(17%) saturate(0%) hue-rotate(181deg) brightness(98%) contrast(80%);
             }

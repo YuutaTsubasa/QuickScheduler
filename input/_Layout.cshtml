@@ -22,11 +22,14 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content='@Document.GetLink(true)' />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet"/>
         <link href='@Context.GetLink("/styles/main.css")' rel="stylesheet"/>
-        <link rel="icon" href='@Context.GetLink("/favicon.ico")'>
+        <link rel="icon" href='@Context.GetLink("/favicon.ico")'/>
+        @if (Document.GetBool("IsTemplate")) {
+            <link href='@Context.GetLink(Document.GetString("TemplateCssFile"))' rel='stylesheet'/>
+        }
     </head>
     <body>
         @Html.Partial("_Header")
