@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 if (weekdayPart) weekdayPart.innerText = weekday;
                 if (timeDescriptionPart) timeDescriptionPart.innerText = contents[day].time;
-                if (timePart) timePart.innerText = `(${weekday} ${contents[day].time}`;
+                if (timePart) timePart.innerText = `${weekday} ${contents[day].time}`;
                 
                 const content = dayItems[day].querySelector(".content");
                 if (contents[day].style === "holiday"){
