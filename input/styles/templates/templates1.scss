@@ -121,10 +121,12 @@ section.weekly_container {
             }
     
             ul.weekly_items {
-                display: grid;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
                 grid-template-columns: auto;
-                gap: 10px;
                 width: 100%;
+                height: 760px;
                 padding: 0;
     
                 li.weekly_item {
@@ -135,6 +137,10 @@ section.weekly_container {
                     list-style-type: none;
                     width: 100%;
                     height: 100px;
+
+                    &:has(.content.hidden){
+                        display: none;
+                    }
     
                     .weekly_item_date {
                         display: flex;
