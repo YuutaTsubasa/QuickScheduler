@@ -207,5 +207,14 @@ document.addEventListener("DOMContentLoaded", function(){
                     });
                 });
         });
+
+        let openSettingsButton = document.querySelector("#open_settings");
+        openSettingsButton.addEventListener("click", function(){
+            let dataForm = document.querySelector(".data_form");
+            let weeklyContainer = document.querySelector(".weekly_container");
+            dataForm.classList.toggle("display");
+            weeklyContainer.classList.toggle("smaller");
+            changeWeeklyToFitParent();
+        });
     }
 });

@@ -110,6 +110,12 @@ section.template_list .template ul li { display: block; font-size: 8pt; padding:
 
 .post_content .post_meta, .post_content .page_meta, .page_content .post_meta, .page_content .page_meta { margin-bottom: 15px; }
 
-button#download_weekly { border: 3px solid #0e0b66; margin-bottom: 15px; background-color: white; width: max-content; font-size: 15pt; font-weight: 700; }
+.button_list ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-start; list-style-type: none; gap: 8px; }
 
-button#download_weekly:hover, button#download_weekly:active { border: 3px solid white; background-color: black; color: white; }
+.button_list ul li { margin: 0px; padding: 0px; display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 930px) { .button_list ul li:has(#open_settings) { display: none; } }
+
+.button_list ul li button { display: flex; color: black; text-decoration: none; min-height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; font-size: 14pt; border: 2px solid black; border-radius: 50px; transition: background-color 0.5s,  border 0.5s; }
+
+.button_list ul li button:hover, .button_list ul li button:active { background-color: black; border: 2px solid white; color: white; }

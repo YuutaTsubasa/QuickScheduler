@@ -35,15 +35,91 @@
                 </div>
 
             </section>
+<section class="button_list">
+    <ul>
+        <li><button id="open_settings">開啟或關閉設定介面</button></li>
+        <li><button id="download_weekly">下載週表（不支援 iOS）</button></li>
+    </ul>
+</section>
+
+<section class="weekly_container">
+    <section class="weekly">
+        <section class="weekly_left_part">
+            <div class="weekly_author_part"></div>
+        </section>
+        <section class="weekly_right_part">
+            <div class="weekly_title_group"><div class="channel_logo_part"></div><h1 class="weekly_title">本週行事曆</h1></div>
+            <ul class="weekly_items">
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+                    <li class="weekly_item">
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
+                        <div class="content stream_off"></div>
+                    </li>
+            </ul>
+            <nav class="weekly_community">
+                <ul>
+
+                </ul>
+            </nav>
+        </section>
+    </section>
+</section>
+
 <style>
     .data_form {
         display: flex;
+        position: fixed;
+        box-sizing: border-box;
+        top: 0;
+        right: -30vw;
         flex-direction: column;
         padding: 15px;
-        margin: 10px;
+        width: 30vw;
+        height: 100vh;
+        overflow: scroll;
         align-items: center;
         background-color: rgb(38, 38, 38);
         border-radius: 20px;
+        z-index: 100;
+
+        transition: right cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    }
+
+    .data_form.display {
+        right: 0;
+    }
+
+    @media (max-width: 930px) {
+        .data_form {
+            position: static;
+            width: 95%;
+            height: max-content;
+            overflow: auto;
+            margin-bottom: 10px;
+        }
     }
 
     .input_field {
@@ -252,53 +328,6 @@
         <div class="input_field"><label for="day7Tag">第七天直播標籤（以 , 隔開）</label><input type="text" id="day7Tag" /></div>
         <div class="input_field"><label for="day7Time">第七天直播時間</label><input type="text" id="day7Time" /></div>
     </div>
-</section>
-
-<button id="download_weekly">下載週表 (不支援 iOS)</button>
-<section class="weekly_container">
-    <section class="weekly">
-        <section class="weekly_left_part">
-            <div class="weekly_author_part"></div>
-        </section>
-        <section class="weekly_right_part">
-            <div class="weekly_title_group"><div class="channel_logo_part"></div><h1 class="weekly_title">本週行事曆</h1></div>
-            <ul class="weekly_items">
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-                    <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
-                    </li>
-            </ul>
-            <nav class="weekly_community">
-                <ul>
-
-                </ul>
-            </nav>
-        </section>
-    </section>
 </section>
 
 <script src='/scripts/weekly.js'></script>        </section>

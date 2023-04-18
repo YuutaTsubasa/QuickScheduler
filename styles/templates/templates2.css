@@ -1,5 +1,12 @@
 section.weekly_container { position: relative; align-self: center; width: 95vw; margin-bottom: 25px; aspect-ratio: 16 / 9; }
 
+section.weekly_container.smaller { box-sizing: border-box; width: 65vw; left: -15vw; }
+
+@media (max-width: 930px) { section.weekly_container { position: sticky; top: 0; z-index: 200; }
+  section.weekly_container.smaller { box-sizing: content-box; width: 95vw; } }
+
+section.weekly_container section.weekly { transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s; }
+
 section.weekly_container section.weekly { --date-background-color: rgb(33, 19, 106); --date-color: white; --logo-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
 
 section.weekly_container section.weekly.styleColor_red { --date-background-color: hsl(0, 70%, 25%); }
