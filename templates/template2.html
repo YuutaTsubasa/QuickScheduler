@@ -94,18 +94,31 @@
 <section class="data_form">
     <div class="input_field"><label for="startDate">開始時間</label><input type="date" id="startDate" /></div>
     <div class="input_field"><label for="titleDescription">標題文字</label><input type="text" id="titleDescription" /></div>
+    <div class="input_field file_field">
+        <label for="channelLogo">頻道 Logo（可填網址或選擇檔案）</label>
+        <input type="text" id="channelLogo"/>
+        <input type="file" id="channelLogoFile" />
+        <input type="hidden" id="channelLogoUrl" />
+    </div>
     <div class="input_field"><label for="backgroundColor">背景顏色</label><input type="color" id="backgroundColor" /></div>
     <div class="input_field file_field">
         <label for="backgroundImage">背景圖片（可填網址或選擇檔案）</label>
-        <input type="text" id="backgroundImage" class="overflow_hidden"/>
+        <input type="text" id="backgroundImage"/>
         <input type="file" id="backgroundImageFile" />
         <input type="hidden" id="backgroundImageUrl" />
     </div>
     <div class="input_field file_field">
         <label for="coverArt">封面圖（可填網址或選擇檔案）</label>
-        <input type="text" id="coverArt" class="overflow_hidden"/>
+        <input type="text" id="coverArt"/>
         <input type="file" id="coverArtFile" />
         <input type="hidden" id="coverArtUrl" />
+    </div>
+    <div class="input_field">
+        <label for="coverArtPosition">封面圖位置（需看主題是否支援）</label>
+        <select name="coverArtPosition" id="coverArtPosition">
+            <option value="left">左方（預設）</option>
+            <option value="right">右方</option>
+        </select>
     </div>
     <div class="input_field"><label for="coverDescription">封面說明</label><input type="text" id="coverDescription" /></div>
     <div class="input_field"><label for="styleColor">主題顏色（需看主題是否支援）</label>
@@ -241,13 +254,13 @@
             <div class="weekly_author_part"></div>
         </section>
         <section class="weekly_right_part">
-            <h1 class="weekly_title">本週行事曆</h1>
+            <div class="weekly_title_group"><div class="channel_logo_part"></div><h1 class="weekly_title">本週行事曆</h1></div>
             <ul class="weekly_items">
                     <li class="weekly_item">
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -256,7 +269,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -265,7 +278,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -274,7 +287,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -283,7 +296,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -292,7 +305,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>
@@ -301,7 +314,7 @@
                     <div class="weekly_item_date">
                         <div class="content_part">
                             <div class="date"><span class="date_part">00/00</span><span class="weekday_part"></span></div>
-                            <div class="time"><span class="time_description_part"></span></div>
+                            <div class="time"><span class="time_part"></span></div>
                         </div>
                     </div>
                     <div class="content stream_off"></div>

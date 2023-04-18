@@ -44,7 +44,23 @@ document.addEventListener("DOMContentLoaded", function(){
             }
                 
             const weeklyLeftPart = document.querySelector(".weekly_left_part");
+            const reverseClassName = "reverse";
+            const coverArtPosition = document.querySelector("#coverArtPosition").value;
             const coverArtUrl = document.querySelector("#coverArtUrl").value;
+            
+            if (weeklyLeftPart.classList.contains(reverseClassName)){
+                if (coverArtPosition === "left")
+                {
+                    weeklyLeftPart.classList.remove(reverseClassName);
+                }
+            }
+            else {
+                if (coverArtPosition === "right")
+                {
+                    weeklyLeftPart.classList.add(reverseClassName);
+                }
+            }
+
             weeklyLeftPart.style.backgroundImage = coverArtUrl ? `url("${coverArtUrl}")` : "";
     
             const weeklyAuthorPart = document.querySelector(".weekly_author_part");
@@ -62,6 +78,15 @@ document.addEventListener("DOMContentLoaded", function(){
             weeklyTitle.innerHTML = titleDescription 
                 ? titleDescription
                 : "本週行事曆";
+
+            const channelLogoPart = document.querySelector(".channel_logo_part");
+            const channelLogoUrl = document.querySelector("#channelLogoUrl").value;
+            if (channelLogoPart){
+                channelLogoPart.innerHTML = channelLogoUrl
+                    ? `<img src="${channelLogoUrl}" />`
+                    : "";
+            }
+
 
             const communitySettings = document.querySelectorAll(".community_setting input");
             const weeklyCommunity = document.querySelector(".weekly_community ul");
@@ -96,12 +121,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 let weekday = `(${new Intl.DateTimeFormat('zh-TW', options).format(contents[day].date)[1]})`;
                 let weekdayPart = dayItems[day].querySelector(".weekday_part");
-                let timeDescriptionPart = dayItems[day].querySelector(".time_description_part");
                 let timePart = dayItems[day].querySelector(".time_part");
-
+                
                 if (weekdayPart) weekdayPart.innerText = weekday;
-                if (timeDescriptionPart) timeDescriptionPart.innerText = contents[day].time;
-                if (timePart) timePart.innerText = `${weekday} ${contents[day].time}`;
+                if (timePart) timePart.innerText = contents[day].time;
                 
                 const content = dayItems[day].querySelector(".content");
                 if (contents[day].style === "holiday"){
