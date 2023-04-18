@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     
         document.querySelectorAll("input, select").forEach(input => {
-            input.addEventListener("change", updateWeekly); 
+            input.addEventListener("input", updateWeekly);
             const memorizedContent = localStorage.getItem(input.id);
             if (memorizedContent && input.getAttribute("type") !== "file") {
                 input.value = memorizedContent;
@@ -159,13 +159,13 @@ document.addEventListener("DOMContentLoaded", function(){
             if (textField.value)
                 hiddenField.value = textField.value;
 
-            textField.addEventListener("change", function(){
+            textField.addEventListener("input", function(){
                 hiddenField.value = textField.value;
                 fileField.value = "";
                 updateWeekly();
             });
 
-            fileField.addEventListener("change", function(event){
+            fileField.addEventListener("input", function(event){
                 textField.value = "";
                 const reader = new FileReader();
                 reader.readAsDataURL(event.target.files[0]);
