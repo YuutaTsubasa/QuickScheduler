@@ -1,12 +1,35 @@
 <style>
     .data_form {
         display: flex;
+        position: fixed;
+        box-sizing: border-box;
+        top: 0;
+        right: -30vw;
         flex-direction: column;
         padding: 15px;
-        margin: 10px;
+        width: 30vw;
+        height: 100vh;
+        overflow: scroll;
         align-items: center;
         background-color: rgb(38, 38, 38);
         border-radius: 20px;
+        z-index: 100;
+
+        transition: right cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    }
+
+    .data_form.display {
+        right: 0;
+    }
+
+    @@media (max-width: 930px) {
+        .data_form {
+            position: static;
+            width: 95%;
+            height: max-content;
+            overflow: auto;
+            margin-bottom: 10px;
+        }
     }
 
     .input_field {

@@ -1,11 +1,6 @@
+@import "templates_weekly_common";
 
 section.weekly_container {
-    position: relative;
-    align-self: center;
-    width: 95vw;
-    margin-bottom: 25px;
-    aspect-ratio: 16 / 9;
-
     section.weekly {
         --item-content-background-color-base: rgba(30, 54, 109, 0.7);
         --item-content-background-color-decorator: rgba(13, 21, 101, 0.7);

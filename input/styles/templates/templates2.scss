@@ -1,11 +1,6 @@
+@import "templates_weekly_common";
 
 section.weekly_container {
-    position: relative;
-    align-self: center;
-    width: 95vw;
-    margin-bottom: 25px;
-    aspect-ratio: 16 / 9;
-
     section.weekly {
         --date-background-color: rgb(33, 19, 106);
         --date-color: white;

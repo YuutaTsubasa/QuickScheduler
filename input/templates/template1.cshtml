@@ -5,9 +5,8 @@ OutsidePageContent: true
 TemplateCssFile: "/styles/templates/templates1.css"
 Published: 2023/04/14
 ---
-@Html.Partial("_DataForm")
+@Html.Partial("_ButtonList")
 
-<button id="download_weekly">下載週表 (不支援 iOS)</button>
 <section class="weekly_container">
     <section class="weekly">
         <section class="weekly_left_part">
@@ -31,5 +30,7 @@ Published: 2023/04/14
         </section>
     </section>
 </section>
+
+@Html.Partial("_DataForm")
 
 <script src='@Context.GetLink("/scripts/weekly.js")'></script>
