@@ -58,6 +58,10 @@ section.weekly_container {
         background-repeat: no-repeat;
         background-size: cover;
         border: 5px solid black;
+
+        &:has(.reverse) {
+            grid-template-columns: 2fr 1fr;
+        }
     
         .weekly_left_part {
             position: relative;
@@ -112,6 +116,10 @@ section.weekly_container {
     
                 img {
                     max-height: 135px;
+                }
+                
+                .hidden {
+                    display: none;
                 }
             }
     

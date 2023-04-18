@@ -1,4 +1,36 @@
+Date.prototype.toDateInputValue = (function() {
+    var local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON().slice(0,10);
+});
+
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+Date.prototype.getMMDDFormat = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+
+    return [(mm > 9 ? '' : '0') + mm,
+            (dd > 9 ? '' : '0') + dd].join('/');
+};
+
 document.addEventListener("DOMContentLoaded", function(){
+    const defaultValueSetting = [
+        {inputSelector: "#startDate", value: new Date().toDateInputValue()},
+        {inputSelector: "#backgroundColor", value: "#666666"}];
+
+    defaultValueSetting.forEach(setting => {
+        let element = document.querySelector(setting.inputSelector);
+        if (element) {
+            element.value = setting.value;
+        }
+    })
+    
+    
     const setClassName = function(tag, className, value){
         if (value){
             if (!tag.classList.contains(className)){
@@ -14,19 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let weekly = document.querySelector(".weekly");
     if (weekly){
-        Date.prototype.addDays = function(days) {
-            var date = new Date(this.valueOf());
-            date.setDate(date.getDate() + days);
-            return date;
-        }
         
-        Date.prototype.getMMDDFormat = function() {
-            var mm = this.getMonth() + 1; // getMonth() is zero-based
-            var dd = this.getDate();
-    
-            return [(mm > 9 ? '' : '0') + mm,
-                    (dd > 9 ? '' : '0') + dd].join('/');
-            };
     
         const memorize = function(){
             [].slice.apply(document.querySelectorAll("input, select"))
@@ -76,16 +96,26 @@ document.addEventListener("DOMContentLoaded", function(){
     
             const weeklyTitle = document.querySelector(".weekly_title");
             const titleDescription = document.querySelector("#titleDescription").value;
-            weeklyTitle.innerHTML = titleDescription 
-                ? titleDescription
-                : "本週行事曆";
-
             const channelLogoPart = document.querySelector(".channel_logo_part");
             const channelLogoUrl = document.querySelector("#channelLogoUrl").value;
+            const hiddenClassName = "hidden";
+            weeklyTitle.innerHTML = titleDescription || channelLogoUrl
+                ? titleDescription
+                : "本週行事曆";
+            setClassName(
+                weeklyTitle, 
+                hiddenClassName, 
+                !weeklyTitle.innerHTML);
+            
             if (channelLogoPart){
                 channelLogoPart.innerHTML = channelLogoUrl
                     ? `<img src="${channelLogoUrl}" />`
                     : "";
+
+                setClassName(
+                    channelLogoPart, 
+                    hiddenClassName, 
+                    !channelLogoPart.innerHTML);
             }
 
 
