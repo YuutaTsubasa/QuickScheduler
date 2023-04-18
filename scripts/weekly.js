@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(){
+    const setClassName = function(tag, className, value){
+        if (value){
+            if (!tag.classList.contains(className)){
+                tag.classList.add(className);
+            }
+        }
+        else {
+            if (tag.classList.contains(className)){
+                tag.classList.remove(className);
+            }
+        }
+    }
+
     let weekly = document.querySelector(".weekly");
     if (weekly){
         Date.prototype.addDays = function(days) {
@@ -47,20 +60,8 @@ document.addEventListener("DOMContentLoaded", function(){
             const reverseClassName = "reverse";
             const coverArtPosition = document.querySelector("#coverArtPosition").value;
             const coverArtUrl = document.querySelector("#coverArtUrl").value;
+            setClassName(weeklyLeftPart, reverseClassName, coverArtPosition === "right");
             
-            if (weeklyLeftPart.classList.contains(reverseClassName)){
-                if (coverArtPosition === "left")
-                {
-                    weeklyLeftPart.classList.remove(reverseClassName);
-                }
-            }
-            else {
-                if (coverArtPosition === "right")
-                {
-                    weeklyLeftPart.classList.add(reverseClassName);
-                }
-            }
-
             weeklyLeftPart.style.backgroundImage = coverArtUrl ? `url("${coverArtUrl}")` : "";
     
             const weeklyAuthorPart = document.querySelector(".weekly_author_part");
@@ -127,17 +128,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 if (timePart) timePart.innerText = contents[day].time;
                 
                 const content = dayItems[day].querySelector(".content");
-                if (contents[day].style === "holiday"){
-                    if (!content.classList.contains("stream_off")){
-                        content.classList.add("stream_off");
-                    }
-                }
-                else {
-                    if (content.classList.contains("stream_off")){
-                        content.classList.remove("stream_off");
-                    }
-                }
-    
+                setClassName(content, "stream_off", contents[day].style === "holiday");
+                setClassName(content, "hidden", contents[day].style === "none");
+                
                 content.innerHTML = "";
                 if (contents[day].tag) {
                     content.innerHTML += `<ul class="weekly_tags">`
