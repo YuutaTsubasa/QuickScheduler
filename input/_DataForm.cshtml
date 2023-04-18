@@ -57,18 +57,31 @@
 <section class="data_form">
     <div class="input_field"><label for="startDate">開始時間</label><input type="date" id="startDate" /></div>
     <div class="input_field"><label for="titleDescription">標題文字</label><input type="text" id="titleDescription" /></div>
+    <div class="input_field file_field">
+        <label for="channelLogo">頻道 Logo（可填網址或選擇檔案）</label>
+        <input type="text" id="channelLogo"/>
+        <input type="file" id="channelLogoFile" />
+        <input type="hidden" id="channelLogoUrl" />
+    </div>
     <div class="input_field"><label for="backgroundColor">背景顏色</label><input type="color" id="backgroundColor" /></div>
     <div class="input_field file_field">
         <label for="backgroundImage">背景圖片（可填網址或選擇檔案）</label>
-        <input type="text" id="backgroundImage" class="overflow_hidden"/>
+        <input type="text" id="backgroundImage"/>
         <input type="file" id="backgroundImageFile" />
         <input type="hidden" id="backgroundImageUrl" />
     </div>
     <div class="input_field file_field">
         <label for="coverArt">封面圖（可填網址或選擇檔案）</label>
-        <input type="text" id="coverArt" class="overflow_hidden"/>
+        <input type="text" id="coverArt"/>
         <input type="file" id="coverArtFile" />
         <input type="hidden" id="coverArtUrl" />
+    </div>
+    <div class="input_field">
+        <label for="coverArtPosition">封面圖位置（需看主題是否支援）</label>
+        <select name="coverArtPosition" id="coverArtPosition">
+            <option value="left">左方（預設）</option>
+            <option value="right">右方</option>
+        </select>
     </div>
     <div class="input_field"><label for="coverDescription">封面說明</label><input type="text" id="coverDescription" /></div>
     <div class="input_field"><label for="styleColor">主題顏色（需看主題是否支援）</label>

@@ -14,11 +14,11 @@ Published: 2023/04/14
             <div class="weekly_author_part"></div>
         </section>
         <section class="weekly_right_part">
-            <h1 class="weekly_title">本週行事曆</h1>
+            <div class="weekly_title_group"><div class="channel_logo_part"></div><h1 class="weekly_title">本週行事曆</h1></div>
             <ul class="weekly_items">
                 @foreach(var index in Enumerable.Range(0, 7)){
                     <li class="weekly_item">
-                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_part">(X) 00:00</span></span></div>
+                    <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
                         <div class="content stream_off"></div>
                     </li>
                 }

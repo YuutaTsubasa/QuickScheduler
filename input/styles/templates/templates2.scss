@@ -59,6 +59,10 @@ section.weekly_container {
             background-position: center center;
             background-repeat: no-repeat;
     
+            &.reverse {
+                order: 1;
+            }
+
             .weekly_author_part {
                 position: absolute;
                 bottom: 0;
@@ -78,7 +82,7 @@ section.weekly_container {
             padding: 15px 15px 0px 15px;
             background-color: rgba(10, 10, 10, 0.7);
     
-            .weekly_title {
+            .weekly_title_group {
                 display: flex;
                 margin: 8px 0;
                 justify-content: center;
@@ -86,6 +90,7 @@ section.weekly_container {
                 gap: 25px;
                 font-size: 50pt;
                 color: white;
+
                 --text-shadow-size: 2px;
                 --text-shadow-minus-size: calc(var(--text-shadow-size) * -1);
                 text-shadow:
@@ -97,14 +102,10 @@ section.weekly_container {
                     0    var(--text-shadow-size) 0 #000,
                     var(--text-shadow-minus-size)  var(--text-shadow-size) 0 #000,
                     var(--text-shadow-minus-size)  0   0 #000;
-                min-height: 100px;
+                height: 100px;
     
-                img.weekly_white_logo {
-                    height: 150px;
-                }
-    
-                img.weekly_title {
-                    height: 100px;
+                img {
+                    max-height: 90px;
                 }
             }
     
@@ -163,7 +164,7 @@ section.weekly_container {
                                 font-size: 28pt;
                             }
     
-                            .time_description_part {
+                            .time_part {
                                 width: 160px;
                                 height: 100%;
                                 font-size: 25px;
