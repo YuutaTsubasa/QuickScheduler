@@ -18,7 +18,10 @@ Published: 2023/04/14
                 @foreach(var index in Enumerable.Range(0, 7)){
                     <li class="weekly_item">
                     <div class="weekly_item_date"><span class="content_part"><span class="date_part">00/00</span><span class="time_group_part"><span class="weekday_part"></span> <span class="time_part"></span></span></span></div>
-                        <div class="content stream_off"></div>
+                        <div class="content stream_off">
+                            <ul class="weekly_tags"></ul>
+                            <pre class="weekly_day_title"></pre>
+                        </div>
                     </li>
                 }
             </ul>
