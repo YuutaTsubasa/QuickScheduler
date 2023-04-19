@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
         
     
         const memorize = function(){
-            [].slice.apply(document.querySelectorAll("input, select"))
+            [].slice.apply(document.querySelectorAll("input, select, textarea"))
                 .filter(input => input.getAttribute("type") !== "file")
                 .forEach(input => {
                     localStorage.setItem(input.id, input.value);
@@ -161,19 +161,20 @@ document.addEventListener("DOMContentLoaded", function(){
                 setClassName(content, "stream_off", contents[day].style === "holiday");
                 setClassName(content, "hidden", contents[day].style === "none");
                 
-                content.innerHTML = "";
-                if (contents[day].tag) {
-                    content.innerHTML += `<ul class="weekly_tags">`
-                                      + contents[day].tag.split(",").map(tag => `<li>${tag}</li>`).join("")
-                                      + `</ul>`;
-                }
-                content.innerHTML += contents[day].title;
+                const weeklyTags = content.querySelector(".weekly_tags");
+                setClassName(weeklyTags, "empty_tags", !contents[day].tag)
+                weeklyTags.innerHTML = contents[day].tag
+                    ? contents[day].tag.split(",").map(tag => `<li>${tag}</li>`).join("")
+                    : "";
+
+                const weeklyDayTitle = content.querySelector(".weekly_day_title");
+                weeklyDayTitle.innerHTML = contents[day].title;
             }
     
             memorize();
         }
     
-        document.querySelectorAll("input, select").forEach(input => {
+        document.querySelectorAll("input, select, textarea").forEach(input => {
             input.addEventListener("input", updateWeekly);
             const memorizedContent = localStorage.getItem(input.id);
             if (memorizedContent && input.getAttribute("type") !== "file") {
@@ -219,13 +220,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         let downloadButton = document.querySelector("#download_weekly");
         downloadButton.addEventListener("click", function(){
+            let originalTransition = weekly.style.transition;
+            weekly.style.transition = "transform 0s";
             weekly.style.transform = "scale(1)";
 
             let originalBorder = weekly.style.border;
             weekly.style.border = "0";
             let newWindow = window.open();
             newWindow.document.write("載入中......");
-            domtoimage.toPng(weekly)
+            setTimeout(() => {
+                domtoimage.toPng(weekly)
                 .then(function (_) {
                     domtoimage.toPng(weekly)
                         .then(function (dataUrl) {
@@ -233,9 +237,11 @@ document.addEventListener("DOMContentLoaded", function(){
                         newWindow.document.body.innerText = "";
                         newWindow.document.write(img);
                         weekly.style.border = originalBorder;
+                        weekly.style.transition = originalTransition;
                         changeWeeklyToFitParent();
                     });
                 });
+            }, 2000);
         });
 
         let openSettingsButton = document.querySelector("#open_settings");

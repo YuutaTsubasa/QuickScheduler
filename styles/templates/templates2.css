@@ -7,23 +7,27 @@ section.weekly_container.smaller { box-sizing: border-box; width: 65vw; left: -1
 
 section.weekly_container section.weekly { transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s; }
 
-section.weekly_container section.weekly { --date-background-color: rgb(33, 19, 106); --date-color: white; --logo-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
+section.weekly_container section.weekly { --theme-background-color: rgb(33, 19, 106); --theme-color: white; --logo-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(306deg) brightness(106%) contrast(101%); position: absolute; display: grid; grid-template-columns: 1fr 2fr; width: 1920px; height: 1080px; overflow: hidden; transform-origin: top left; background-position: center center; background-repeat: no-repeat; background-size: cover; border: 5px solid black; }
 
-section.weekly_container section.weekly.styleColor_red { --date-background-color: hsl(0, 70%, 25%); }
+section.weekly_container section.weekly.styleColor_red { --theme-background-color: hsl(0, 70%, 25%); }
 
-section.weekly_container section.weekly.styleColor_orange { --date-background-color: hsl(30, 70%, 25%); }
+section.weekly_container section.weekly.styleColor_orange { --theme-background-color: hsl(30, 70%, 25%); }
 
-section.weekly_container section.weekly.styleColor_yellow { --date-background-color: hsl(65, 70%, 25%); }
+section.weekly_container section.weekly.styleColor_yellow { --theme-background-color: hsl(65, 70%, 25%); }
 
-section.weekly_container section.weekly.styleColor_green { --date-background-color: hsl(121, 70%, 25%); }
+section.weekly_container section.weekly.styleColor_green { --theme-background-color: hsl(121, 70%, 25%); }
 
-section.weekly_container section.weekly.styleColor_purple { --date-background-color: rgb(61, 19, 106); }
+section.weekly_container section.weekly.styleColor_purple { --theme-background-color: rgb(61, 19, 106); }
 
-section.weekly_container section.weekly.styleColor_black { --date-background-color: rgb(0, 0, 0); }
+section.weekly_container section.weekly.styleColor_black { --theme-background-color: rgb(0, 0, 0); }
 
-section.weekly_container section.weekly.styleColor_white { --date-background-color: rgb(208, 208, 208); --date-color: black; --logo-color: none; }
+section.weekly_container section.weekly.styleColor_white { --theme-background-color: rgb(208, 208, 208); --theme-color: black; --logo-color: none; }
 
 section.weekly_container section.weekly:has(.reverse) { grid-template-columns: 2fr 1fr; }
+
+section.weekly_container section.weekly:has(.reverse) .weekly_right_part .weekly_community_container { flex-direction: row; }
+
+section.weekly_container section.weekly:has(.reverse) .weekly_right_part nav.weekly_community ul { justify-content: flex-start; }
 
 section.weekly_container section.weekly .weekly_left_part { position: relative; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
@@ -49,7 +53,7 @@ section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.we
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item:has(.content.hidden) { display: none; }
 
-section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date { display: flex; align-items: center; justify-content: center; font-weight: 700; width: 300px; height: 100%; background-color: var(--date-background-color); color: var(--date-color); }
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date { display: flex; align-items: center; justify-content: center; font-weight: 700; width: 300px; height: 100%; background-color: var(--theme-background-color); color: var(--theme-color); }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 25px; width: 96%; height: 30px; box-sizing: border-box; padding: 2px; gap: 5px; }
 
@@ -57,30 +61,28 @@ section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.we
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .time_part { width: 160px; height: 100%; font-size: 25px; }
 
-section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; color: black; font-weight: 700; padding-left: 30px; }
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; color: black; font-weight: 700; padding-left: 30px; overflow: hidden; }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content.stream_off { display: flex; justify-content: center; letter-spacing: 20px; color: transparent; -webkit-text-stroke: 2px #999999; font-size: 50px; }
 
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content.stream_off ul.weekly_tags { letter-spacing: 0px; color: white; -webkit-text-stroke: 0px; }
+
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; column-gap: 10px; row-gap: 15px; margin-right: 15px; }
+
+section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags.empty_tags { display: none; }
 
 section.weekly_container section.weekly .weekly_right_part ul.weekly_items .content ul.weekly_tags li { display: block; text-align: center; font-size: 15pt; padding: 10px 20px; min-width: 60px; background-color: #1e1e1e; color: white; border-radius: 20px; border: 1px solid white; text-shadow: none; }
 
-section.weekly_container section.weekly nav.weekly_community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: wrap; list-style-type: none; gap: 8px; font-size: 15pt; }
+section.weekly_container section.weekly nav.weekly_community { margin-top: 60px; }
 
-section.weekly_container section.weekly nav.weekly_community ul li { margin: 0px; padding: 0px; }
+section.weekly_container section.weekly nav.weekly_community ul { margin: 25px 0px; padding: 0px; display: flex; flex-wrap: nowrap; list-style-type: none; align-items: center; justify-content: flex-end; gap: 8px; font-size: 17pt; }
 
-section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: var(--date-color); text-decoration: none; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; transition: background-color 0.5s,  border 0.5s; background-color: var(--date-background-color); border: 1px solid white; }
+section.weekly_container section.weekly nav.weekly_community ul li { margin: 0px; padding: 0px; display: flex; align-items: center; justify-content: center; }
+
+section.weekly_container section.weekly nav.weekly_community ul li div { display: flex; color: var(--theme-color); text-decoration: none; width: max-content; height: 50px; text-align: center; align-items: center; justify-content: center; font-weight: 700; padding-left: 10px; padding-right: 10px; transition: background-color 0.5s,  border 0.5s; background-color: var(--theme-background-color); border: 1px solid white; }
 
 section.weekly_container section.weekly nav.weekly_community ul li div img.logo { height: 75%; filter: var(--logo-color); }
 
 section.weekly_container section.weekly nav.weekly_community ul li div:hover, section.weekly_container section.weekly nav.weekly_community ul li div:active { background-color: white; border: 2px solid black; color: black; }
 
 section.weekly_container section.weekly nav.weekly_community ul li div:hover img.logo, section.weekly_container section.weekly nav.weekly_community ul li div:active img.logo { filter: none; }
-
-section.weekly_container section.weekly nav.weekly_community.weekly_community { margin-top: 60px; }
-
-section.weekly_container section.weekly nav.weekly_community.weekly_community ul { display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-end; font-size: 17pt; }
-
-section.weekly_container section.weekly nav.weekly_community.weekly_community ul li { display: flex; align-items: center; justify-content: center; }
-
-section.weekly_container section.weekly nav.weekly_community.weekly_community ul li div { width: max-content; }
