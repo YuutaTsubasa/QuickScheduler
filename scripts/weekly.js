@@ -138,10 +138,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 let currentDate = startDate.addDays(day - 1);
                 contents.push({
                     "date": currentDate,
+                    "isTitleHidden": document.querySelector(`#day${day}TitleHidden`).value === "hidden",
                     "title": document.querySelector(`#day${day}Title`).value,
                     "style": document.querySelector(`#day${day}Style`).value,
+                    "isTagHidden": document.querySelector(`#day${day}TagHidden`).value === "hidden",
                     "tag": document.querySelector(`#day${day}Tag`).value,
                     "time": document.querySelector(`#day${day}Time`).value,
+                    "thumbnail": document.querySelector(`#day${day}ThumbnailUrl`).value
                 })
             }
     
@@ -160,15 +163,24 @@ document.addEventListener("DOMContentLoaded", function(){
                 const content = dayItems[day].querySelector(".content");
                 setClassName(content, "stream_off", contents[day].style === "holiday");
                 setClassName(content, "hidden", contents[day].style === "none");
-                
+
+                const contentBackgroundSupport = dayItems[day].querySelector(".content_background_support");
+                if (contentBackgroundSupport) {
+                    contentBackgroundSupport.style.backgroundImage = contents[day].thumbnail
+                        ? `url(${contents[day].thumbnail})`
+                        : "";
+                }
+
                 const weeklyTags = content.querySelector(".weekly_tags");
                 setClassName(weeklyTags, "empty_tags", !contents[day].tag)
-                weeklyTags.innerHTML = contents[day].tag
+                weeklyTags.innerHTML = !contents[day].isTagHidden && contents[day].tag
                     ? contents[day].tag.split(",").map(tag => `<li>${tag}</li>`).join("")
                     : "";
 
                 const weeklyDayTitle = content.querySelector(".weekly_day_title");
-                weeklyDayTitle.innerHTML = contents[day].title;
+                weeklyDayTitle.innerHTML = contents[day].isTitleHidden 
+                    ? ""
+                    : contents[day].title;
             }
     
             memorize();
