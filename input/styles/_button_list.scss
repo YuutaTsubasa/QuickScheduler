@@ -1,6 +1,11 @@
 .button_list {
+    .download_hint {
+        color: red; 
+        margin-bottom: 15px;
+    }
+
     ul {
-        margin: 25px 0px;
+        margin: 10px 0px;
         padding: 0px;
         display: flex;
         flex-wrap: nowrap;

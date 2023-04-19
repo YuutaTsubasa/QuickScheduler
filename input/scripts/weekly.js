@@ -226,12 +226,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
             let originalBorder = weekly.style.border;
             weekly.style.border = "0";
+            let options = {
+                width: 1920,
+                height: 1080,
+                style: {
+                    transtion: "transform 0s",
+                    transform: "scale(1)",
+                    border: "0"
+                }
+            };
+
             let newWindow = window.open();
             newWindow.document.write("載入中......");
             setTimeout(() => {
-                domtoimage.toPng(weekly)
+                domtoimage.toPng(weekly, options)
                 .then(function (_) {
-                    domtoimage.toPng(weekly)
+                    domtoimage.toPng(weekly, options)
                         .then(function (dataUrl) {
                         var img = "<img src='" + dataUrl + "'/>"
                         newWindow.document.body.innerText = "";
